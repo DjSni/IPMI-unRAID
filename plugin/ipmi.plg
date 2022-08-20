@@ -2,8 +2,8 @@
 
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ipmi">
-<!ENTITY author    "dmacias72">
-<!ENTITY version   "2021.01.08">
+<!ENTITY author    "DjSni">
+<!ENTITY version   "2022.08.20">
 <!ENTITY launch    "Settings/IPMI">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/IPMI-unRAID/master">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
@@ -17,6 +17,9 @@
 
 <CHANGES>
 ##&name;
+###2022.08.20
+- update to the latest freeipmi 1.6.9
+- 
 ###2021.01.08
 - fix plugin package permissions
 ###2020.09.17
@@ -323,9 +326,14 @@
 </CHANGES>
 
 <!--
-This plugin uses freeipmi to display sensor readings
--->
-<FILE Name="&plgPATH;/freeipmi-1.6.6-x86_64-1.txz" Min="6.8" Run="/sbin/upgradepkg --install-new">
+This plugin uses freeipmi to display sensor readings-->
+
+<FILE Name="&plgPATH;/freeipmi-1.6.9-x86_64-1.txz" Min="6.10" Run="/sbin/upgradepkg --install-new">
+<URL>&pkgURL;/freeipmi-1.6.6-x86_64-1.txz</URL>
+<MD5>604ecc5e4756c0347fb4a1d9be4c4000</MD5>
+</FILE>
+
+<FILE Name="&plgPATH;/freeipmi-1.6.6-x86_64-1.txz" Min="6.8" Max="6.9.99" Run="/sbin/upgradepkg --install-new">
 <URL>&pkgURL;/freeipmi-1.6.6-x86_64-1.txz</URL>
 <MD5>604ecc5e4756c0347fb4a1d9be4c4000</MD5>
 </FILE>
@@ -510,7 +518,7 @@ else
 echo ""
 echo "-----------------------------------------------------------"
 echo " &name; has been installed."
-echo " Copyright 2015-2021, &author;"
+echo " Copyright 2015-2022, &author;"
 echo " Version: &version;"
 echo "-----------------------------------------------------------"
 echo ""
@@ -551,7 +559,7 @@ done
 echo ""
 echo "-----------------------------------------------------------"
 echo " &name; has been removed."
-echo " Copyright 2015-2021, &author;"
+echo " Copyright 2015-2022, &author;"
 echo " Version: &version;"
 echo "-----------------------------------------------------------"
 echo ""
